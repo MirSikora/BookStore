@@ -1,0 +1,22 @@
+{block content}
+<section>
+<article class="Book" n:foreach="$bookItems as $bookItem">
+<div class="BookAll">
+<img src="{$basePath}/Images/books/{$bookItem['img']}">
+<div class="BookInfo">
+<h2>{$bookItem['name']}</h2><br>
+<h3>{$bookItem['author_name']} {$bookItem['author_surname']}</h3><br>
+<p>{$bookItem['text']}</p><br>
+</div></div><div class="Buttons">
+<h3 class="Price">Cena: {$bookItem['price']},- Kč</h3><br>
+<button>Skladem {$bookItem['pieces']}</button>
+<form n:name=cartForm>
+<input n:name=cartId type="hidden" value="{$bookItem['id']}" >
+<button n:name=toCart class="CartButton">Do košíku <img id="CartButton" src="{$basePath}/images/Cart.png"></button>
+</form>
+</div>
+</article>
+</section>
+
+{/block}
+

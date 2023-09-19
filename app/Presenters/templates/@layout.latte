@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="{$basePath}/style.css" />
+
+	<title>BookStore | Nette Web</title>
+</head>
+
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a n:href="Home:">BookStore</a></li>
+				<li><form class="SearchAll" n:name=searchForm>
+ <input type="search" n:name=search placeholder="Hledat"><a n:href="Search:result"><input type="image" id="Search" n:name=send src="{$basePath}/images/Search.png"></a>
+ </form>
+				 </li>
+				<li class="LogCart">{if $user->loggedIn}<a n:href="User:"><img class="LogImg" id="Login" src="{$basePath}/images/Login.png"></a>{else}<a n:href="Login:"><img class="LogImg" id="Login" src="{$basePath}/images/LogoutUser.png"></a>{/if}
+				<a n:href="Login:out"><img id="Out" src="{$basePath}/images/Logout.png"></a>
+				<a n:href="Cart:"><img id="Cart" src="{$basePath}/images/Cart.png"></a></li>
+			</ul>	
+		</nav>
+	</header>
+	<main>
+	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+
+	{include content}
+	
+	</main>
+	
+	{block scripts}
+	<script src="https://nette.github.io/resources/js/3/netteForms.min.js"></script>
+	{/block}
+	<footer>
+	<p>MirSikora &copy; 2023. Vytvořeno za pomoci Nette Framework.</p>
+	</footer>
+</body>
+</html>

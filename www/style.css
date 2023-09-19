@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    color: whitesmoke;
+    text-decoration: none;
+    cursor: pointer;    
+}
+/******************** layout.latte ****************************/
+body {
+    width: 100vw;
+    height: 100vh;    
+}
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background-color: rgb(22, 22, 22);
+    color: whitesmoke; 
+    z-index: 1; 
+}
+nav {
+    width: 95%;        
+    margin: auto;            
+}
+nav ul {
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;         
+    list-style: none;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+.LogCart {
+    width: 190px;
+    display: flex;
+    justify-content: space-between;
+}
+.SearchAll input {
+    outline: none;
+    border: none;
+    background-color: whitesmoke;
+    padding: 5px 10px;
+    border-radius: 50px 0 0 50px;
+    height: 38px;
+    font-size: 1.2rem;
+}
+#Search {
+    height: 38px;    
+    border-radius: 0 50px 50px 0;
+    padding: 2px;
+    cursor: pointer; 
+    background-color: whitesmoke;
+    margin-top: 7.5px;    
+}
+.SearchAll {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.flash{
+    position: absolute;
+    top: 60px;
+    width: 100vw;
+    text-align: center;
+    padding: 10px 0;
+    background-color: yellow;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: rgb(22, 22, 22);
+    color: whitesmoke;    
+    font-size: 1.5rem;
+    text-align: center;
+    padding-top: 10px;
+    z-index: 1; 
+}
+#Cart {
+    height: 45px;
+    width: 50px;
+    padding-top: 10px;
+}
+#Login {
+    height: 45px;
+    width: 60px;
+    padding-top: 10px;
+}
+#Out {
+    height: 45px;
+    width: 40px;
+    padding-top: 10px;
+}
+main {    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    padding-bottom: 80px;
+}
+h1 {
+    text-align: center;
+}
+/******************** login.latte ****************************/
+.LogForm {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.FormLogin{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;   
+}
+.FormLogin input{
+    border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+  padding: 10px 15px;
+  margin-bottom: 5px;
+  width: 250px;
+  font-size: 1.2rem;
+}
+.FormLogin input[type="submit"]{
+    border-bottom: none;
+    background-color: rgb(22, 22, 22);
+    color: whitesmoke;
+    cursor: pointer;
+}
+.RegForm {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center; 
+}
+main a {
+    color: black;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+/******************** home.latte ****************************/
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 30px;
+}
+article.Book {
+    background-color: rgb(163, 172, 172);
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px;
+}
+.BookAll {
+    width: 500px;
+    height: 330px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin:5px;
+}
+.Book img {
+    width: 150px;
+    height: 250px;
+    padding: 10px 10px;
+}
+.BookInfo {
+    padding: 10px;
+}
+.Price {
+    position: relative;
+    left: 10px;
+}
+.Buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;     
+    padding: 10px 0;      
+}
+.Book button {
+    display: flex;
+    flex-direction: row;
+    width: 120px;
+    justify-content: center;
+    align-items: center;    
+    background-color:  rgb(22, 22, 22);
+    color: whitesmoke;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}
+
+#CartButton {    
+    height: 40px;
+    width: 40px;    
+     
+}
+.CartButton {
+    cursor: pointer;
+}
+/******************** cart.latte ****************************/
+.CartTable{
+    border: 2px solid black;
+    border-collapse: collapse;
+    
+}
+th,
+td{
+    border: 1px solid black;
+    padding: 5px;
+}
+th{
+    text-align: left;
+    background-color: rgb(173, 172, 172);
+}
+.TableNumber{
+    text-align: right;
+}
+.DeliveryButton{
+    border-radius: 15px;
+    padding: 10px 25px;
+    font-size: 1.3rem;
+    background-color:  rgb(22, 22, 22);
+    color: whitesmoke;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 300;
+}
+.DeleteButton{
+    border-radius: 50px;
+    background-color: rgb(22, 22, 22);
+    color: whitesmoke;
+    padding: 2px 22px;
+}
+/******************** user.latte ****************************/
+.Label{
+    font-weight: bold;
+}

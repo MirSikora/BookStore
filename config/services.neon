@@ -1,0 +1,16 @@
+search:
+	-
+		in: %appDir%
+		classes:
+			- *Factory
+			- *Facade
+
+
+services:
+	- App\Router\RouterFactory::createRouter
+	- Authenticator
+	- UserService	
+	- App\Model\HomeManager
+	- App\Model\RegistrationManager
+	- App\Model\SearchManager
+	- App\Model\CartManager

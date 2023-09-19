@@ -1,0 +1,14 @@
+{block content}
+<header>
+		<nav>
+			<ul>
+				<li><a n:href="Home:">BookStore</a></li>
+				<li class="SearchAll">
+                 {include '..\Search\result.latte'}
+ </li>
+				<li class="LogCart">{if $user->loggedIn}<a n:href="User:"><img class="LogImg" id="Login" src="{$basePath}/images/Login.png"></a>{else}<a n:href="Login:"><img class="LogImg" id="Login" src="{$basePath}/images/LogoutUser.png"></a>{/if}
+				<a n:href="Login:out"><img id="Out" src="{$basePath}/images/Logout.png"></a>
+				<a n:href="Cart:"><img id="Cart" src="{$basePath}/images/Cart.png"></a></li>
+			</ul>	
+		</nav>
+	</header>
