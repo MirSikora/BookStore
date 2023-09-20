@@ -23,7 +23,7 @@ final class RouterFactory
 		$router->addRoute('registration', 'Registration:default');
 		$router->addRoute('search', 'Search:default');
 		$router->addRoute('result', 'Search:result');
-		$router->addRoute('header', 'Header:default');
+		$router->addRoute('header', 'Header:default');		
 		return $router;
 	}
 }

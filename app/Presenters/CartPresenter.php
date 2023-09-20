@@ -29,12 +29,11 @@ final class CartPresenter extends BasePresenter
     }     		
 	}
 	public function createComponentSendForm(): Form{
-
+		
 		$form = new Form();		
 	    $form->addSubmit('send');
-		$form->onSuccess[] = [$this, 'sendFormSucceeded'];        
+		$form->onSuccess[] = [$this, 'sendFormSucceeded'];     
 		return $form;
-       
 	}
     
 		public function sendFormSucceeded(Form $form, $values) {
@@ -43,12 +42,14 @@ final class CartPresenter extends BasePresenter
             $deliveryId= $this->user->getIdentity()->getId(); 
 			$this->cartManager->sendDelivery($deliveryId);
 		   $this->flashMessage('Objednávka byla úspěšně odeslána.'); 
-		
+			
 		
 	}
 	public function handleDeleteCart($id){        
         $this->cartManager->returnBack($id);
         $this->flashMessage('Položka odebrána.');
         $this->redirect('Cart:');
+
+        
     }
-}
+}	

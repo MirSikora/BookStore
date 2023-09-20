@@ -1,7 +1,7 @@
 {block content}
 <h1>Nákupní košík</h1><br>
-{if $user->loggedIn}
-
+{if $user->isLoggedIn()}
+{var_dump($cartItems)}
 <table class="CartTable" n:if="$cartItems">
 	<tr>
 		<th>Název položky</th>
@@ -13,7 +13,7 @@
 		<td><i>{$cartItem['author_surname']} {$cartItem['author_name']}:</i> {$cartItem['name']}</td>
 		<td class="TableNumber">{$cartItem['pieces']}</td>		
         <td class="TableNumber">{$cartItem['price']},-</td>
-        <td ><a class="DeleteButton" n:href="DeleteCart! id=>$cartItem['id']">X</a></td>   
+        <td ><a class="DeleteButton" n:href='DeleteCart! id=>$cartItem["id"]'>X</a></td>   
 	</tr>
     <tr class="SumTable" n:foreach="$sumCartItems as $sumCartItem">
 		<th>Celkem</th>
