@@ -25,12 +25,12 @@ class HomeManager{
 		$database = $this->database;
         $database->beginTransaction();
         try{		
-              $database->query('INSERT INTO delivery (date,	users_id, books_id,	pieces	) VALUES (now(), ?, ?, 1)', $idUser, $idCart);
-			  $database->query('UPDATE books SET pieces = pieces - 1 WHERE id = ?',$idCart);
-          $database->commit();
+            $database->query('INSERT INTO delivery (date,	users_id, books_id,	pieces	) VALUES (now(), ?, ?, 1)', $idUser, $idCart);
+			$database->query('UPDATE books SET pieces = pieces - 1 WHERE id = ?',$idCart);
+          	$database->commit();
         } catch (\Exception $e){
-          $database->rollback();
-          throw $e;
+          	$database->rollback();
+          	throw $e;
         }
 	}
 }

@@ -14,8 +14,7 @@ final class UserPresenter extends BasePresenter
         private UserService $userService        
     ){}
     
-    public function renderDefault(): void
-    {
+    public function renderDefault(): void{
         $id= $this->user->getIdentity()->getId();    
         $this->template->userInfo = $this->userService->getUserInfo($id);        
     }

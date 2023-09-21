@@ -30,9 +30,9 @@ final class RegistrationPresenter extends BasePresenter{
         $form->addText('nickname', '')->setHtmlAttribute('placeholder', 'Přihlašovací jméno')->setRequired('Zadejte prosím přihlašovací jméno');
         $form->addPassword('password', '')->setHtmlAttribute('placeholder', 'Heslo')->setRequired('Zadejte prosím heslo');
         $form->addPassword('passwordVerify', '')->setHtmlAttribute('placeholder', 'Heslo znovu')
-	->setRequired('Zadejte prosím heslo ještě jednou pro kontrolu')
-	->addRule($form::Equal, 'Hesla se neshodují', $form['password'])
-	->setOmitted();
+        ->setRequired('Zadejte prosím heslo ještě jednou pro kontrolu')
+        ->addRule($form::Equal, 'Hesla se neshodují', $form['password'])
+        ->setOmitted();
         $form->addSubmit('insert', 'Registrovat');
         $form->onSuccess[] = [$this, 'registrationItemInsert'];        
         return $form;        

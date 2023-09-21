@@ -11,13 +11,13 @@ class RegistrationManager{
 
 	  public function saveRegistrationItems($name, $surname, $email, $address, $city, $nickname, $role, $password){
         $database = $this->database;
-            $database->beginTransaction();
+        $database->beginTransaction();
         try{		
-              $database->query('INSERT INTO users (name, surname, email, address, city, nickname, role, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', $name, $surname, $email, $address, $city, $nickname, $role, $password);
-          $database->commit();
+            $database->query('INSERT INTO users (name, surname, email, address, city, nickname, role, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', $name, $surname, $email, $address, $city, $nickname, $role, $password);
+            $database->commit();
         } catch (\Exception $e){
-          $database->rollback();
-          throw $e;
+            $database->rollback();
+            throw $e;
         }
             
       }

@@ -36,15 +36,15 @@ final class SearchPresenter extends BasePresenter{
        
 	}
     
-		public function sendToCart(Form $form, $values) {
-            
+	public function sendToCart(Form $form, $values) {
+        if($this->user->isLoggedIn()){ 
             $values = $form->getValues();
-			$idUser= $this->user->getIdentity()->getId(); 
-           $idCart = intval($values['cartId']);
-		   $this->searchManager->getToCart($idCart, $idUser);
-		   $this->flashMessage('Zboží přidáno do košíku.'); 
-		   
-		
-	}
-	
+	    	$idUser= $this->user->getIdentity()->getId(); 
+            $idCart = intval($values['cartId']);
+	    	$this->searchManager->getToCart($idCart, $idUser);
+            $this->flashMessage('Zboží přidáno do košíku.'); 
+        }else{
+	    	$this->flashMessage('Nakupovat mohou jen přihlášení uživatelé.');			 
+	  	}   		
+	}	
 }

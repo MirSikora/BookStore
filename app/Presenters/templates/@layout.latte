@@ -14,8 +14,8 @@
 			<ul>
 				<li><a n:href="Home:">BookStore</a></li>
 				<li><form class="SearchAll" n:name=searchForm>
- <input type="search" n:name=search placeholder="Hledat"><a n:href="Search:result"><input type="image" id="Search" n:name=send src="{$basePath}/images/Search.png"></a>
- </form>
+					<input type="search" n:name=search placeholder="Hledat"><a n:href="Search:result"><input type="image" id="Search" n:name=send src="{$basePath}/images/Search.png"></a>
+					</form>
 				 </li>
 				<li class="LogCart">{if $user->loggedIn}<a n:href="User:"><img class="LogImg" id="Login" src="{$basePath}/images/Login.png"></a>{else}<a n:href="Login:"><img class="LogImg" id="Login" src="{$basePath}/images/LogoutUser.png"></a>{/if}
 				<a n:href="Login:out"><img id="Out" src="{$basePath}/images/Logout.png"></a>

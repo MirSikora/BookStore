@@ -14,11 +14,10 @@ abstract class BasePresenter extends Presenter
        
 	}
     
-		public function searchFormSucceeded(Form $form, $values) {
+	public function searchFormSucceeded(Form $form, $values) {
             
-            $values = $form->getValues();
-            $query= $values['search'];
-		
+        $values = $form->getValues();
+        $query= $values['search'];		
 		$this->redirect('Search:default',$query);
 		
 	}

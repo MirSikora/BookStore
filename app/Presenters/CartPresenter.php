@@ -23,10 +23,10 @@ final class CartPresenter extends BasePresenter
 
     public function renderDefault(){
         if($this->user->isLoggedIn()){
-        $userId= $this->user->getIdentity()->getId(); 		
-		$this->template->cartItems = $this->cartManager->getCartItems($userId);
-        $this->template->sumCartItems = $this->cartManager->getCartAllItems($userId); 
-    }     		
+        	$userId= $this->user->getIdentity()->getId(); 		
+			$this->template->cartItems = $this->cartManager->getCartItems($userId);
+        	$this->template->sumCartItems = $this->cartManager->getCartAllItems($userId); 
+    	}     		
 	}
 	public function createComponentSendForm(): Form{
 		
@@ -36,20 +36,17 @@ final class CartPresenter extends BasePresenter
 		return $form;
 	}
     
-		public function sendFormSucceeded(Form $form, $values) {
+	public function sendFormSucceeded(Form $form, $values) {
             
-            $values = $form->getValues();
-            $deliveryId= $this->user->getIdentity()->getId(); 
-			$this->cartManager->sendDelivery($deliveryId);
-		   $this->flashMessage('Objednávka byla úspěšně odeslána.'); 
-			
+        $values = $form->getValues();
+        $deliveryId= $this->user->getIdentity()->getId(); 
+		$this->cartManager->sendDelivery($deliveryId);
+		$this->flashMessage('Objednávka byla úspěšně odeslána.'); 			
 		
 	}
 	public function handleDeleteCart($id){        
         $this->cartManager->returnBack($id);
         $this->flashMessage('Položka odebrána.');
-        $this->redirect('Cart:');
-
-        
+        $this->redirect('Cart:');        
     }
 }	

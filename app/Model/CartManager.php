@@ -45,8 +45,8 @@ class CartManager{
 		$database = $this->database;
         $database->beginTransaction();
         try{
-       	$database->query('DELETE FROM delivery WHERE id=?', $id);
-        $database->query('UPDATE books SET pieces = pieces + 1 WHERE id IN (SELECT books_id FROM delivery WHERE id = ?)',$id);			  
+        $database->query('UPDATE books SET pieces = pieces + 1 WHERE id IN (SELECT books_id FROM delivery WHERE id = ?)',$id);
+       	$database->query('DELETE FROM delivery WHERE id=?', $id);        			  
           $database->commit();
         } catch (\Exception $e){
           	$database->rollback();

@@ -64,6 +64,11 @@ nav ul {
     justify-content: space-around;
     align-items: center;
 }
+@media (max-width: 680px) {
+    .SearchAll {
+        display: none;
+    }
+}
 .flash{
     position: absolute;
     top: 60px;
@@ -107,7 +112,9 @@ main {
     padding-top: 100px;
     padding-bottom: 80px;
 }
-h1 {
+h1,
+h2,
+h3 {
     text-align: center;
 }
 /******************** login.latte ****************************/
@@ -167,6 +174,15 @@ article.Book {
     gap: 5px;
     margin:5px;
 }
+@media (max-width:700px) {
+    article.Book {
+        width: 95%;
+    }
+    .BookAll {
+        width: 100%;        
+        height: auto;
+    }
+}
 .Book img {
     width: 150px;
     height: 250px;
@@ -185,10 +201,22 @@ article.Book {
     justify-content: space-around;     
     padding: 10px 0;      
 }
+@media (max-width:420px){
+    .Price {
+        position: inherit;
+        width: 100%;
+        margin-bottom: 5px;
+        padding-left: 10px;
+    }
+    .Buttons {
+        flex-wrap: wrap;        
+    }
+}
 .Book button {
     display: flex;
     flex-direction: row;
     width: 120px;
+    height: 40px;
     justify-content: center;
     align-items: center;    
     background-color:  rgb(22, 22, 22);

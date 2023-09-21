@@ -26,23 +26,22 @@ final class HomePresenter extends BasePresenter{
 
 	public function createComponentCartForm(): Form{
 		
-			$form = new Form();
-			$form->addHidden('cartId');			
-			$form->addSubmit('toCart');
-			$form->onSuccess[] = [$this, 'sendToCart'];        
-			return $form;       
+		$form = new Form();
+		$form->addHidden('cartId');			
+		$form->addSubmit('toCart');
+		$form->onSuccess[] = [$this, 'sendToCart'];        
+		return $form;       
 	}
     
-		public function sendToCart(Form $form, $values) {
-         if($this->user->isLoggedIn()){   
-            $values = $form->getValues();
+	public function sendToCart(Form $form, $values) {
+        if($this->user->isLoggedIn()){   
+           	$values = $form->getValues();
 			$idUser= $this->user->getIdentity()->getId(); 
-           $idCart = intval($values['cartId']);
-		   $this->homeManager->getToCart($idCart, $idUser);
-		   $this->flashMessage('Zboží přidáno do košíku.'); 
+          	$idCart = intval($values['cartId']);
+		   	$this->homeManager->getToCart($idCart, $idUser);
+		   	$this->flashMessage('Zboží přidáno do košíku.'); 
 		 }else{
-			$this->flashMessage('Nakupovat mohou jen registrovaní uživatelé.');			 
-		}  
-		
+			$this->flashMessage('Nakupovat mohou jen přihlášení uživatelé.');			 
+		}  		
 	}
 }
